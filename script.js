@@ -3,7 +3,9 @@
 const FRAME_IMAGES = {
   "frame1.png": "frames/frame1.png",
   "frame2.png": "frames/frame2.png",
-  "frame3.png": "frames/frame3.png"
+  "frame3.png": "frames/frame3.png",
+  "frame4.png": "frames/frame4.png",
+  "frame5.png": "frames/frame5.png"
 };
 
 // ==== DOM Elements ====
