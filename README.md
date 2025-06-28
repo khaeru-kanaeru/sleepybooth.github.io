@@ -1,1 +1,0 @@
-# futri-eka
