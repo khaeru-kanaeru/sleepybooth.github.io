@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=480, initial-scale=1.0">
+  <title>Sleepybooth Strip</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Sleepybooth Strip</h1>
+    <h2 class="subjudul">Designed by Eka x Futri</h2>
+    <div class="booth">
+      <div class="preview">
+        <div class="video-container">
+          <video id="video" width="480" height="480" autoplay playsinline></video>
+          <img id="frameOverlay" class="overlay" width="480" height="480" src="" alt="Frame Overlay" style="display:none;">
+        </div>
+        <div class="controls">
+          <label>
+            Frame:
+            <select id="frameSelect">
+              <option value="">Tanpa Frame</option>
+              <option value="frame1.png">Sleepy Blue</option>
+              <option value="frame2.png">Cuddle Star</option>
+              <option value="frame3.png">Spider Gothic</option>
+            </select>
+          </label>
+          <label>
+            Filter:
+            <select id="filterSelect">
+              <option value="none">Normal</option>
+              <option value="grayscale">Grayscale</option>
+              <option value="sepia">Sepia</option>
+              <option value="brightness">Brightness</option>
+              <option value="contrast">Contrast</option>
+              <option value="invert">Invert</option>
+              <option value="saturate">Saturate</option>
+              <option value="blur">Blur</option>
+            </select>
+          </label>
+          <button id="startBtn">Capture</button>
+        </div>
+        <div class="countdown" id="countdown"></div>
+      </div>
+      <div class="result" id="resultSection" style="display:none;">
+        <h2>Result</h2>
+        <canvas id="resultCanvas" width="480" height="1440"></canvas>
+        <a id="downloadBtn" download="sleepystrip.png">Download</a>
+      </div>
+    </div>
+    <footer>
+      <small> Sleepybooth &copy; 2025</small>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

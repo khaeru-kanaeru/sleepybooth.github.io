@@ -1,0 +1,141 @@
+body {
+  background: #9cccfc;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #9cccfc;
+  margin: 0;
+  padding: 0;
+}
+main {
+  max-width: 520px;
+  margin: 32px auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #0001;
+  padding: 32px 24px 16px 24px;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 2px;
+  font-size: 2rem;
+  color: #69a7e4;
+  letter-spacing: 1px;
+}
+h2 {
+  text-align: center;
+  font-size: 0.9em;
+  color: #69a7e4;
+  margin-top: 0;
+}
+.booth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.video-container {
+  position: relative;
+  width: 480px;
+  height: 480px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px #0002;
+}
+video {
+  width: 480px;
+  height: 480px;
+  object-fit: cover;
+  background: #222;
+  display: block;
+}
+.overlay {
+  position: absolute;
+  left: 0; top: 0;
+  width: 480px; height: 480px;
+  pointer-events: none;
+  z-index: 2;
+  object-fit: contain;
+  opacity: 1;
+}
+.frame {
+  filter: none;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background: white;
+  z-index: 2;
+  padding: 1em;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.controls label {
+  color: #000000;
+  font-size: 1rem;
+}
+.controls select, .controls button {
+  margin-left: 4px;
+  font-size: 1rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background: #f7f7fa;
+}
+.controls button {
+  background: #2d85f7;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background .2s;
+}
+.controls button:hover { background: #1761c7; }
+
+.countdown {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #69a7e4;
+  height: 2.5rem;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.result {
+  font-size: 2rem;
+  margin-top: 24px;
+  text-align: center;
+}
+#resultCanvas {
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px #0002;
+  background: #fff;
+}
+#downloadBtn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 18px;
+  background: #2d85f7;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background .2s;
+}
+#downloadBtn:hover { background: #1761c7; }
+
+footer {
+  margin-top: 28px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.9em;
+}
