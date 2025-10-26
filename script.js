@@ -97,7 +97,6 @@ function loadFrameImage(src) {
 
 // ==== Handle Filter Preview ====
 filterSelect.addEventListener('change', () => {
-  filterCSS = FILTERS_MAP[filterSelect.value] || '';
   video.style.filter = filterCSS;
 });
 
@@ -225,6 +224,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Hide overlay by default
   frameOverlay.style.display = 'none';
 });
+
 
 
 
