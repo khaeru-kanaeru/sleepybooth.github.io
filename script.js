@@ -43,7 +43,7 @@ const FILTERS_MAP = {
   invert: 'invert(1)',
   saturate: 'saturate(2)',
   blur: 'blur(2px)',
-  mirror: ''
+  mirror: 'mirror'
 };
 const FILTERS_CANVAS = {
   none: '',
@@ -54,7 +54,7 @@ const FILTERS_CANVAS = {
   invert: 'invert(1)',
   saturate: 'saturate(2)',
   blur: 'blur(2px)',
-  mirror: ''
+  mirror: 'mirror'
 };
 
 // ==== Camera Setup ====
@@ -225,5 +225,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // Hide overlay by default
   frameOverlay.style.display = 'none';
 });
+
 
 
