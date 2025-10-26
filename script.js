@@ -5,7 +5,9 @@ const FRAME_IMAGES = {
   "frame2.png": "frames/frame2.png",
   "frame3.png": "frames/frame3.png",
   "frame4.png": "frames/frame4.png",
-  "frame5.png": "frames/frame5.png"
+  "frame5.png": "frames/frame5.png",
+  "frame6.png": "frames/frame6.png",
+  "frame7.png": "frames/frame7.png"
 };
 
 // ==== DOM Elements ====
@@ -199,3 +201,4 @@ window.addEventListener('DOMContentLoaded', () => {
   // Hide overlay by default
   frameOverlay.style.display = 'none';
 });
+
