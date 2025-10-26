@@ -42,7 +42,8 @@ const FILTERS_MAP = {
   contrast: 'contrast(1.4)',
   invert: 'invert(1)',
   saturate: 'saturate(2)',
-  blur: 'blur(2px)'
+  blur: 'blur(2px)',
+  mirror: ''
 };
 const FILTERS_CANVAS = {
   none: '',
@@ -52,7 +53,8 @@ const FILTERS_CANVAS = {
   contrast: 'contrast(1.4)',
   invert: 'invert(1)',
   saturate: 'saturate(2)',
-  blur: 'blur(2px)'
+  blur: 'blur(2px)',
+  mirror: ''
 };
 
 // ==== Camera Setup ====
@@ -68,6 +70,7 @@ async function startCamera() {
 // ==== Handle Frame Overlay ====
 frameSelect.addEventListener('change', () => {
   const frameVal = frameSelect.value;
+  filterCSS = FILTERS_MAP[selectedValue] || '';
   if (frameVal && FRAME_IMAGES[frameVal]) {
     frameOverlay.src = FRAME_IMAGES[frameVal];
     frameOverlay.style.display = 'block';
@@ -76,6 +79,13 @@ frameSelect.addEventListener('change', () => {
     frameOverlay.src = '';
     frameOverlay.style.display = 'none';
     frameImage = null;
+  } 
+  video.style.filter = filterCSS;
+
+  if (selectedValue === 'mirror') {
+    video.style.transform = 'scaleX(-1)'; 
+  } else {
+    video.style.transform = 'none'; 
   }
 });
 
@@ -153,10 +163,24 @@ async function capturePhoto() {
   canvas.width = PHOTO_WIDTH;
   canvas.height = PHOTO_HEIGHT;
   const ctx = canvas.getContext('2d');
+  const selectedFilter = filterSelect.value; 
   // Apply filter
   ctx.filter = FILTERS_CANVAS[filterSelect.value] || '';
   ctx.drawImage(video, 0, 0, PHOTO_WIDTH, PHOTO_HEIGHT);
   // Overlay frame if any
+  if (frameImage && frameImage.complete) {
+    ctx.drawImage(frameImage, 0, 0, PHOTO_WIDTH, PHOTO_HEIGHT);
+  }
+  if (selectedFilter === 'mirror') {
+    ctx.translate(PHOTO_WIDTH, 0);
+    ctx.scale(-1, 1);
+  }
+
+  ctx.drawImage(video, 0, 0, PHOTO_WIDTH, PHOTO_HEIGHT);
+
+  if (selectedFilter === 'mirror') {
+    ctx.setTransform(1, 0, 0, 1, 0, 0); 
+  }
   if (frameImage && frameImage.complete) {
     ctx.drawImage(frameImage, 0, 0, PHOTO_WIDTH, PHOTO_HEIGHT);
   }
@@ -201,4 +225,5 @@ window.addEventListener('DOMContentLoaded', () => {
   // Hide overlay by default
   frameOverlay.style.display = 'none';
 });
+
 
